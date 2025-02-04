@@ -18,11 +18,38 @@ async function addToCart(req, res) {
 async function removeFromCart(req, res) {
   const { id } = req.params;
 
-  await prisma.cart.delete({
-    where: { id },
-  });
+  try {
+    const cartItem = await prisma.cart.findUnique({
+      where: { id },
+    });
 
-  res.status(200).json({ message: "Product removed from cart" });
+    if (!cartItem) {
+      return res.status(404).json({ message: "Cart item not found" });
+    }
+
+    await prisma.cart.delete({
+      where: { id },
+    });
+
+    res.status(200).json({ message: "Product removed from cart" });
+  } catch (error) {
+    res.status(500).json({ message: "Error removing item from cart", error });
+  }
 }
 
-module.exports = { addToCart, removeFromCart };
+async function getCartItems(req, res) {
+  const { id } = req.params;
+
+  try {
+    const cartItems = await prisma.cart.findMany({
+      where: { id },
+      include: { product: true },
+    });
+
+    res.status(200).json({ cartItems });
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch cart items", error });
+  }
+}
+
+module.exports = { addToCart, removeFromCart, getCartItems };
