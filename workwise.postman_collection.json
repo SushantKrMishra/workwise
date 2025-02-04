@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "30f49326-3317-4d90-80a9-3584d161ba1d",
+		"name": "workwise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28227818"
+	},
+	"item": [
+		{
+			"name": "/auth/signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"SELLER\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auth/login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/products/add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMzY1NDVlMC04MjhjLTQ5ZGQtOTAyMi0yNTY4ODIyZGIyYzUiLCJyb2xlIjoiQlVZRVIiLCJpYXQiOjE3Mzg2NDMxNjIsImV4cCI6MTczODY0Njc2Mn0.g0TYSpnF-jQrha2GJM0x2dL69X7ECrUlMGMVVlKvGQk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Running Shoes\",\r\n  \"category\": \"shoes\",\r\n  \"description\": \"Comfortable running shoes.\",\r\n  \"price\": 50,\r\n  \"discount\": 10\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/products/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"products",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/products/fetchProducts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMzY1NDVlMC04MjhjLTQ5ZGQtOTAyMi0yNTY4ODIyZGIyYzUiLCJyb2xlIjoiQlVZRVIiLCJpYXQiOjE3Mzg2NDMxNjIsImV4cCI6MTczODY0Njc2Mn0.g0TYSpnF-jQrha2GJM0x2dL69X7ECrUlMGMVVlKvGQk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Running Shoes\",\r\n  \"category\": \"shoes\",\r\n  \"description\": \"Comfortable running shoes.\",\r\n  \"price\": 50,\r\n  \"discount\": 10\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/products/fetchProducts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"products",
+						"fetchProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/products/edit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMzY1NDVlMC04MjhjLTQ5ZGQtOTAyMi0yNTY4ODIyZGIyYzUiLCJyb2xlIjoiQlVZRVIiLCJpYXQiOjE3Mzg2NDMxNjIsImV4cCI6MTczODY0Njc2Mn0.g0TYSpnF-jQrha2GJM0x2dL69X7ECrUlMGMVVlKvGQk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Running Shoes (Updated)\",\r\n  \"category\": \"shoes\",\r\n  \"description\": \"Premium running shoes for athletes.\",\r\n  \"price\": 60,\r\n  \"discount\": 15\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/products/edit/1bb53730-e0f7-426a-b137-f6de028c4873",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"products",
+						"edit",
+						"1bb53730-e0f7-426a-b137-f6de028c4873"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/products/delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMzY1NDVlMC04MjhjLTQ5ZGQtOTAyMi0yNTY4ODIyZGIyYzUiLCJyb2xlIjoiQlVZRVIiLCJpYXQiOjE3Mzg2NDMxNjIsImV4cCI6MTczODY0Njc2Mn0.g0TYSpnF-jQrha2GJM0x2dL69X7ECrUlMGMVVlKvGQk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/products//delete/1bb53730-e0f7-426a-b137-f6de028c4873",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"products",
+						"",
+						"delete",
+						"1bb53730-e0f7-426a-b137-f6de028c4873"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/cart/add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMzY1NDVlMC04MjhjLTQ5ZGQtOTAyMi0yNTY4ODIyZGIyYzUiLCJyb2xlIjoiQlVZRVIiLCJpYXQiOjE3Mzg2NDMxNjIsImV4cCI6MTczODY0Njc2Mn0.g0TYSpnF-jQrha2GJM0x2dL69X7ECrUlMGMVVlKvGQk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": \"1509b32b-d310-47fa-88ed-ab423f65527b\", \r\n  \"quantity\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/cart/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cart",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/cart/:productId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMzY1NDVlMC04MjhjLTQ5ZGQtOTAyMi0yNTY4ODIyZGIyYzUiLCJyb2xlIjoiQlVZRVIiLCJpYXQiOjE3Mzg2NDMxNjIsImV4cCI6MTczODY0Njc2Mn0.g0TYSpnF-jQrha2GJM0x2dL69X7ECrUlMGMVVlKvGQk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/cart/remove/db211daa-7c64-44ba-b961-0463477c7aad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cart",
+						"remove",
+						"db211daa-7c64-44ba-b961-0463477c7aad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMzY1NDVlMC04MjhjLTQ5ZGQtOTAyMi0yNTY4ODIyZGIyYzUiLCJyb2xlIjoiQlVZRVIiLCJpYXQiOjE3Mzg2NDMxNjIsImV4cCI6MTczODY0Njc2Mn0.g0TYSpnF-jQrha2GJM0x2dL69X7ECrUlMGMVVlKvGQk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/cart/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cart",
+						"items"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
