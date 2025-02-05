@@ -42,20 +42,3 @@ model Product {
   seller    User   @relation("UserProducts", fields: [sellerId], references: [id])
   cartItems Cart[] @relation("ProductCart") 
 }
-
-
-model Product {
-  id          String   @id @default(uuid())
-  sellerId    String
-  name        String   @index
-  category    String   @index
-  description String
-  price       Float
-  discount    Float?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt()
-
-  // Relations
-  seller    User   @relation("UserProducts", fields: [sellerId], references: [id])
-  cartItems Cart[] @relation("ProductCart")
-}
