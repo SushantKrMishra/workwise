@@ -4,7 +4,6 @@
   "description": "//Tech Stack & Dependencies\r Node.js + Express.js (REST API)\r PostgreSQL (Database)\r Prisma/Sequelize (ORM)\r JWT (Authentication)\r BCrypt (Password hashing)\r Zod/Joi (Input validation)\r Dotenv (Environment variables)",
   "main": "index.js",
   "scripts": {
-    "postinstall": "prisma generate",
     "start": "nodemon server.js"
   },
   "keywords": [],

@@ -1,8 +1,8 @@
 const prisma = require("../../prismaClient");
 async function addProduct(req, res) {
   const { name, category, description, price, discount } = req.body;
-  const sellerId = req.user.userId; 
-
+  const sellerId = req.user.userId;
+  console.log(sellerId);
   try {
     const product = await prisma.product.create({
       data: {
@@ -32,7 +32,7 @@ async function editProduct(req, res) {
     });
 
     if (!product) {
-      return res.status(404).json({ message: "Product not found" });
+      return res.status(204).json({ message: "Product not found" });
     }
 
     if (product.sellerId !== sellerId) {
@@ -56,7 +56,7 @@ async function editProduct(req, res) {
 
 async function deleteProduct(req, res) {
   const { id } = req.params;
-  const sellerId = req.user.userId; 
+  const sellerId = req.user.userId;
 
   try {
     const product = await prisma.product.findUnique({
@@ -64,7 +64,7 @@ async function deleteProduct(req, res) {
     });
 
     if (!product) {
-      return res.status(404).json({ message: "Product not found" });
+      return res.status(204).json({ message: "Product not found" });
     }
 
     if (product.sellerId !== sellerId) {
@@ -120,7 +120,7 @@ async function searchProducts(req, res) {
 async function fetchProducts(req, res) {
   try {
     const products = await prisma.product.findMany({
-      take: 10, 
+      take: 10,
       select: {
         id: true,
         name: true,
