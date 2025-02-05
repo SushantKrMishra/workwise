@@ -26,7 +26,7 @@ npm install
 
 Create a .env file in the backend folder and define the necessary environment variables:
 JWT_SECRET=your_secret_key
-DATABASE_URL=your_database_url
+DATABASE_URL="postgresql://postgres:database_123@localhost:5432/ecommerce"
 
 Run database migrations using Prisma (if you haven't set up the database schema yet)
 npx prisma migrate dev
