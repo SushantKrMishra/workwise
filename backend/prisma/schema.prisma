@@ -23,14 +23,14 @@ model User {
 
   // Relations
   products  Product[] @relation("UserProducts") 
-  cartItems Cart[]    @relation("UserCart")     
 }
+
 
 model Product {
   id          String   @id @default(uuid())
   sellerId    String
-  name        String   
-  category    String   
+  name        String
+  category    String
   description String
   price       Float
   discount    Float?  
@@ -39,20 +39,4 @@ model Product {
 
   // Relations
   seller    User   @relation("UserProducts", fields: [sellerId], references: [id])
-  cartItems Cart[] @relation("ProductCart")
-
-  // Indexes
-  @@index([name])
-  @@index([category])
-}
-
-model Cart {
-  id        String   @id @default(uuid())
-  userId    String
-  productId String
-  quantity  Int      @default(1)
-
-  // Relations
-  user    User    @relation("UserCart", fields: [userId], references: [id])
-  product Product @relation("ProductCart", fields: [productId], references: [id])
 }
