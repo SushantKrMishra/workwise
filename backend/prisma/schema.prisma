@@ -23,6 +23,7 @@ model User {
 
   // Relations
   products  Product[] @relation("UserProducts") 
+  cartItems Cart[]    @relation("UserCart")     
 }
 
 
@@ -39,4 +40,5 @@ model Product {
 
   // Relations
   seller    User   @relation("UserProducts", fields: [sellerId], references: [id])
+  cartItems Cart[] @relation("ProductCart") 
 }
