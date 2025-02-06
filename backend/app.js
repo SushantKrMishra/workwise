@@ -17,5 +17,8 @@ const cartRoutes = require("./src/routes/cartRoutes");
 app.use("/auth", authRoutes);
 app.use("/products", productRoutes);
 app.use("/cart", cartRoutes);
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
+});
 
 module.exports = app;
