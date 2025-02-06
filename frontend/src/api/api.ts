@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/",
+  baseURL: "https://workwise-jel2.onrender.com/",
 });
 
 API.interceptors.request.use(
