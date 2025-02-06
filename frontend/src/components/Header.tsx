@@ -53,7 +53,7 @@ const Header = () => {
 
   return (
     <HeaderStyle>
-      <Logo onClick={() => navigate("/")}>Ecommerce</Logo>
+      <Logo onClick={() => navigate("/home")}>Ecommerce</Logo>
       <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
         {role === "SELLER" && (
           <div
