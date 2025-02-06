@@ -4,7 +4,8 @@
   "description": "//Tech Stack & Dependencies\r Node.js + Express.js (REST API)\r PostgreSQL (Database)\r Prisma/Sequelize (ORM)\r JWT (Authentication)\r BCrypt (Password hashing)\r Zod/Joi (Input validation)\r Dotenv (Environment variables)",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "postinstall": "npx prisma migrate deploy && npx prisma generate"
   },
   "keywords": [],
   "author": "Sushant Kr Mishra",
